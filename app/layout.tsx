@@ -43,6 +43,16 @@ export const metadata: Metadata = {
       "Handcrafted luxury bags in wood and leather. Inquiry-first atelier experience.",
     images: ["/images/logo.png"]
   },
+  icons: {
+    icon: [
+      { url: "/images/logo.png", sizes: "512x512", type: "image/png" },
+      { url: "/images/logo.png", sizes: "192x192", type: "image/png" },
+      { url: "/images/favicon.ico", type: "image/x-icon" }
+    ],
+    apple: [{ url: "/images/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/images/logo.png", "/images/favicon.ico"]
+  },
+  manifest: "/images/site.webmanifest",
   metadataBase: new URL(siteUrl)
 };
 
