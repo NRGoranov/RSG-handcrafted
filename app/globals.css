@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #0b0b0b;
+  color: #f3ecdf;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: #b78b5a;
+  color: #0b0b0b;
+}
+
+.container-luxury {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-caramel focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
+}
+
+/* Consistent luxury scrollbar system */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #b78b5a #171717;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c29766 0%, #9b734a 100%);
+  border-radius: 999px;
+  border: 2px solid #171717;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #d0a674 0%, #aa8055 100%);
+}
+
+/* Hide page scrollbar during hero; reveal after hero */
+html[data-hero-passed="false"] {
+  scrollbar-width: none;
+}
+
+html[data-hero-passed="false"]::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
