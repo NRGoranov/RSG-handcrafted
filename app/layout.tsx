@@ -15,11 +15,15 @@ const manrope = Manrope({
 });
 
 const siteUrl = "https://rsg-handcrafted.vercel.app";
+const shareTitle = "RSG Handcrafted | Wooden & Leather Handbags";
+const shareDescription =
+  "Handcrafted wooden and leather handbags with timeless character. Explore limited pieces or request a custom creation.";
+const shareImage =
+  "https://og-image.vercel.app/RSG%20Handcrafted.png?theme=dark&md=0&fontSize=110px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fvercel-triangle-black.svg";
 
 export const metadata: Metadata = {
-  title: "RSG Handcrafted | Wooden & Leather Handbags",
-  description:
-    "RSG Handcrafted creates luxury wooden and leather handbags, shaped by hand for timeless presence. Every piece is available by inquiry and can be customized.",
+  title: shareTitle,
+  description: shareDescription,
   keywords: [
     "handcrafted luxury bags",
     "wooden leather handbags",
@@ -27,21 +31,19 @@ export const metadata: Metadata = {
     "bespoke handbag"
   ],
   openGraph: {
-    title: "RSG Handcrafted | Wooden & Leather Handbags",
-    description:
-      "Handcrafted elegance in wood and leather. Explore limited pieces and request custom artisan creations.",
+    title: shareTitle,
+    description: shareDescription,
     url: siteUrl,
     siteName: "RSG Handcrafted",
-    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "RSG Handcrafted logo" }],
+    images: [{ url: shareImage, width: 1200, height: 630, alt: "RSG Handcrafted share preview" }],
     locale: "en_US",
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "RSG Handcrafted | Wooden & Leather Handbags",
-    description:
-      "Handcrafted luxury bags in wood and leather. Inquiry-first atelier experience.",
-    images: ["/images/logo.png"]
+    title: shareTitle,
+    description: shareDescription,
+    images: [shareImage]
   },
   icons: {
     icon: [
