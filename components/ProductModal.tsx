@@ -54,6 +54,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          onClick={onClose}
           aria-modal="true"
           role="dialog"
           aria-label={`${product.name} details`}
@@ -65,6 +66,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
             exit={{ opacity: 0, scale: 0.96, y: 20 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="h-[92vh] w-full overflow-auto rounded-t-2xl border border-ivory/15 bg-[#111] p-5 sm:h-auto sm:max-h-[90vh] sm:max-w-5xl sm:rounded-2xl sm:p-7"
+            onClick={(event) => event.stopPropagation()}
           >
             <div className="mb-5 flex items-start justify-between gap-4">
               <h3 className="font-serif text-3xl text-ivory">{product.name}</h3>
@@ -83,8 +85,21 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                 <p className="text-mist">{product.description}</p>
                 <dl className="space-y-2 text-sm text-ivory/90">
                   <div>
+                    <dt className="font-medium text-caramel">Model</dt>
+                    <dd>{product.model}</dd>
+                  </div>
+                  <div>
                     <dt className="font-medium text-caramel">Dimensions</dt>
-                    <dd>{product.dimensions}</dd>
+                    <dd>
+                      <span className="block text-xs uppercase tracking-[0.14em] text-mist">
+                        W x H x T (cm)
+                      </span>
+                      {product.dimensions}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-medium text-caramel">Price</dt>
+                    <dd>EUR {product.priceEur}</dd>
                   </div>
                   <div>
                     <dt className="font-medium text-caramel">Availability</dt>

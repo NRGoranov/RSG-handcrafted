@@ -69,6 +69,26 @@ export default function InquirySection() {
         </div>
 
         <form onSubmit={onSubmit} className="space-y-4" noValidate>
+          <div
+            className="rounded-xl border border-caramel/50 bg-caramel/10 px-4 py-3 text-sm text-ivory"
+            role="note"
+            aria-label="Inquiry form status notice"
+          >
+            <p className="font-medium text-caramel">Important</p>
+            <p className="mt-1 text-ivory/90">
+              The website form is not active yet. Please contact us on WhatsApp at{" "}
+              <a
+                href="https://wa.me/359887509906"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring underline decoration-caramel/70 underline-offset-4 hover:text-caramel"
+              >
+                +359887509906
+              </a>
+              .
+            </p>
+          </div>
+
           <Field label="Name" required>
             <input
               className="focus-ring w-full rounded-xl border border-ivory/20 bg-transparent px-4 py-3 text-sm"
@@ -154,10 +174,11 @@ export default function InquirySection() {
 
           <button
             type="submit"
-            disabled={status === "loading"}
-            className="focus-ring inline-flex min-h-11 items-center rounded-full bg-caramel px-6 py-3 text-sm font-medium text-ink disabled:cursor-not-allowed disabled:opacity-70"
+            disabled
+            aria-disabled="true"
+            className="focus-ring inline-flex min-h-11 items-center rounded-full bg-caramel/55 px-6 py-3 text-sm font-medium text-ink/80 disabled:cursor-not-allowed disabled:opacity-90"
           >
-            {status === "loading" ? "Sending..." : "Send Inquiry"}
+            Form Temporarily Unavailable
           </button>
 
           {feedback ? (

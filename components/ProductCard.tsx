@@ -25,6 +25,9 @@ export default function ProductCard({ product, onView }: ProductCardProps) {
       </button>
       <div className="flex flex-1 flex-col p-5">
         <h3 className="font-serif text-2xl text-ivory">{product.name}</h3>
+        <p className="mt-1 text-xs uppercase tracking-[0.18em] text-caramel/90">
+          EUR {product.priceEur}
+        </p>
         <p className="mt-3 flex-1 text-sm text-mist">{product.description}</p>
         <button
           type="button"

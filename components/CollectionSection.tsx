@@ -17,7 +17,7 @@ export default function CollectionSection() {
         description="Three silhouettes, each shaped in hand-finished wood and leather, available through personal inquiry."
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-3 md:[&>*:last-child:nth-child(3n+1)]:col-start-2">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} onView={setSelectedProduct} />
         ))}

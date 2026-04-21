@@ -1,19 +1,48 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const heroRotationImages = [
+  "/images/heroRotation/hero-1.jpg",
+  "/images/heroRotation/hero-2.jpeg",
+  "/images/heroRotation/hero-3.jpeg",
+  "/images/heroRotation/hero-4.jpeg"
+];
 
 export default function Hero() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % heroRotationImages.length);
+    }, 5200);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
     <section id="top" className="relative min-h-[88vh] overflow-hidden bg-ink">
-      <Image
-        src="/images/hero.jpg"
-        alt="Handcrafted wooden and leather handbag by RSG Handcrafted"
-        fill
-        priority
-        className="object-cover"
-        sizes="100vw"
-      />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={heroRotationImages[activeIndex]}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={heroRotationImages[activeIndex]}
+            alt="Handcrafted wooden and leather handbag by RSG Handcrafted"
+            fill
+            priority={activeIndex === 0}
+            className="object-cover"
+            sizes="100vw"
+          />
+        </motion.div>
+      </AnimatePresence>
       <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-ink" />
       <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-ink" />
       <div className="absolute inset-x-0 bottom-0 h-[2px] bg-ink" />

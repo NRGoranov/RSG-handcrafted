@@ -7,7 +7,7 @@ export default function CraftsmanshipSection() {
       <div className="container-luxury grid items-center gap-10 md:grid-cols-2">
         <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-ivory/10">
           <Image
-            src="/images/craftsmanship.jpg"
+            src="/images/heroRotation/hero-2.jpeg"
             alt="Close-up of handcrafted woodworking and leather stitching"
             fill
             className="object-cover"
