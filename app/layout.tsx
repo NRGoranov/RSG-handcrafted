@@ -18,8 +18,7 @@ const siteUrl = "https://rsg-handcrafted.vercel.app";
 const shareTitle = "RSG Handcrafted | Wooden & Leather Handbags";
 const shareDescription =
   "Handcrafted wooden and leather handbags with timeless character. Explore limited pieces or request a custom creation.";
-const shareImage =
-  "https://og-image.vercel.app/RSG%20Handcrafted.png?theme=dark&md=0&fontSize=110px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fvercel-triangle-black.svg";
+const shareImage = "/images/heroRotation/hero-1.jpg";
 
 export const metadata: Metadata = {
   title: shareTitle,
